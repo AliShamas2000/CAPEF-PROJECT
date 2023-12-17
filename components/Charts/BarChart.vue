@@ -89,6 +89,7 @@ const options = {
 
 const series = ref([
   {
+    name:"quantity",
     data: processedData.map(item => item.number),
   },
 ]);

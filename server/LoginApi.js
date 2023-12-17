@@ -5,8 +5,12 @@ export function login(username, password) {
     username: username,
     password: password
   };
-
-  return axios.post('http://capefserver.myeasycards.com/Account/LoginUser', data
+  const token = localStorage.getItem("token"); 
+  const headers = {
+     Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.post('http://capefserver.myeasycards.com/Account/LoginUser', data,{headers}
   )
     .then((response) => {
       console.log(response.data);
