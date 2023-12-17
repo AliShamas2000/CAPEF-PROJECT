@@ -1,21 +1,20 @@
 <template>
-    <div class="bg-[#FFFFFF] rounded-[8px] shadow-md p-[20px] w-full">
-        <div class="chart-title">{{props.title}}</div>
-  <client-only>
-
-    <ApexCharts
-      v-if="ApexCharts"
-      :options="options"
-      :series="series"
-      type="bar"
-      height="350"
-      class=""
-    />
-  </client-only>
-</div>
+  <div class="bg-[#FFFFFF] rounded-[8px] shadow-md p-[20px] w-full flex flex-col gap-[59px]">
+    <div class="chart-title">{{ props?.title }}</div>
+    <client-only>
+      <ApexCharts
+        v-if="ApexCharts"
+        :options="options"
+        :series="series"
+        type="bar"
+        height="350"
+        class=""
+      />
+    </client-only>
+  </div>
 </template>
-  
-  <script setup>
+
+<script setup>
 import { defineProps, ref, onMounted } from "vue";
 const props = defineProps(["data", "title", "showNumbers"]);
 const ApexCharts = ref(null);
@@ -27,6 +26,12 @@ onMounted(async () => {
   }
 });
 
+// Convert string numbers to integers
+const processedData = props.data.map(item => ({
+  name: item.name,
+  number: parseInt(item.number.replace(/,/g, ""), 10),
+}));
+
 const options = {
   chart: {
     height: 350,
@@ -37,7 +42,7 @@ const options = {
   },
   plotOptions: {
     bar: {
-      columnWidth: "45%",
+      columnWidth: "60%",
       distributed: true,
       borderRadius: 10,
       borderRadiusApplication: "end",
@@ -50,22 +55,25 @@ const options = {
     show: false,
   },
   xaxis: {
-    categories: props?.data?.map((value, index) => `${value.name}`),
+    categories: processedData.map(value => value.name),
+  },
+  yaxis: {
+    max: Math.max(...processedData.map(item => item.number)) + 1000,
   },
   grid: {
     show: false,
   },
   annotations: {
     points: props.showNumbers
-      ? props?.data?.map((value, index) => ({
-          x: `${value.name}`,
+      ? processedData.map(value => ({
+          x: value.name,
           y: value.number,
           marker: {
             size: 0,
           },
           label: {
             text: value.number.toString(),
-            position: "top",
+            position: "center",
             offsetY: -10,
             style: {
               fontSize: "12px",
@@ -81,16 +89,9 @@ const options = {
 
 const series = ref([
   {
-    name: "Example Series",
-    data: props?.data?.map((item) => item.number),
+    data: processedData.map(item => item.number),
   },
 ]);
 </script>
-  
-  <style>
 
-  #SvgjsG1088 rect {
-    display: none !important;
-  }
-</style>
-  
+<style></style>
