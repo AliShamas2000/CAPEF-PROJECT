@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white min-h-[120px] m-[15px] p-[15px] shadow-md rounded-[8px] flex flex-col gap-[15px]"
+    class="bg-white min-w-[240px] min-h-[120px] m-[15px] p-[15px] shadow-md rounded-[8px] flex flex-col gap-[15px]"
   >
     <div :style="getTextStyles()">{{ props.data.name }}</div>
     <div :style="getNumberStyles(props.data)" >{{ props.data.number }}</div>

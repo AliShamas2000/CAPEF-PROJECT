@@ -253,9 +253,11 @@ html {
   opacity: 1;
 }
 .apexcharts-yaxis {
-    display: none;
+    display: none !important;
   }
-  #SvgjsG1088 rect {
+ 
+ 
+  .apexcharts-point-annotations rect {
     display: none !important;
   }
   .apexcharts-text tspan{
@@ -264,6 +266,7 @@ html {
       font-weight: 600;
       line-height: 24px;
       color: #000000;
+      transform: rotate(0deg) !important;
   }
 .chart-title{
     font-family: var(--primary-font-family);
