@@ -6,7 +6,8 @@
         :id="inputId"
         :placeholder="placeholder"
         :class="inputClasses"
-        v-model="inputValue"
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
   </template>
@@ -30,12 +31,23 @@
         type: String,
         default: 'text',
       },
-      value: {
+      modelValue: {
         type: [String, Number],
         default: '',
       },
     },
-   
+    emits: ['update:modelValue'],
+    methods: {
+        focus() {
+            this.$refs.input.focus()
+        },
+        select() {
+            this.$refs.input.select()
+        },
+        setSelectionRange(start, end) {
+            this.$refs.input.setSelectionRange(start, end)
+        },
+    },
   };
   </script>
   

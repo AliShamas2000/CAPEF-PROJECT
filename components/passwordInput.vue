@@ -2,7 +2,9 @@
     <div class="form-group flex flex-col gap-1">
         <label :for="inputId">{{ label }}</label>
         <div class="input-wrapper">
-            <input :type="inputType" :id="inputId" :placeholder="placeholder" :class="inputClasses" v-model="inputValue" />
+            <input :type="inputType" :id="inputId" :placeholder="placeholder" :class="inputClasses" v-model="inputValue" :value="modelValue"
+            @input="$emit('update:modelValue', $event.target.value)"
+            />
             <svg v-if="showPassword" class="password-toggle-icon" @click="togglePasswordVisibility"
                 xmlns="http://www.w3.org/2000/svg" height="16" width="18"
                 viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
@@ -40,7 +42,7 @@ export default {
             type: String,
             default: 'text',
         },
-        value: {
+        modelValue: {
             type: [String, Number],
             default: '',
         },
@@ -58,6 +60,18 @@ export default {
     methods: {
         togglePasswordVisibility() {
             this.showPassword = !this.showPassword;
+        },
+    },
+    emits: ['update:modelValue'],
+    methods: {
+        focus() {
+            this.$refs.input.focus()
+        },
+        select() {
+            this.$refs.input.select()
+        },
+        setSelectionRange(start, end) {
+            this.$refs.input.setSelectionRange(start, end)
         },
     },
 };
