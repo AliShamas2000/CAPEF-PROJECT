@@ -1,5 +1,5 @@
 <template>
-    <div class="login_div flex flex-col gap-5   pt-5 pb-1 justify-start">
+    <form class="login_div flex flex-col gap-5   pt-5 pb-1 justify-start">
         <div class="login-container flex flex-col items-center">
             <div class="logo-login pb-5">
                 <img src="~assets/images/logo.png" alt="Logo" class="">
@@ -16,8 +16,11 @@
 
                 <Button buttonText="SE CONNECTER"  buttonClasses="btn-login" />
 
+                <File label="MOT DE PASSE" placeholder="Mot De Passe" :input-classes="customInputClasses" 
+                />
+
         </div>
-    </div>
+    </form>
 </template>
 
 <script setup>
@@ -28,6 +31,8 @@ definePageMeta({
 import MyInput from "@/components/input.vue";
 import PasswordInput from "@/components/passwordInput.vue";
 import Button from "@/components/button.vue";
+
+import File from "@/components/fileInput.vue";
 
 const username = ref('');
 const customInputClasses = 'normal-input';
