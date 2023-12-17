@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white min-h-[120px] m-[20px] p-[15px] shadow-md rounded-[8px] flex flex-col gap-[15px]"
+    class="bg-white min-h-[120px] m-[15px] p-[15px] shadow-md rounded-[8px] flex flex-col gap-[15px]"
   >
     <div :style="getTextStyles()">{{ props.data.name }}</div>
     <div :style="getNumberStyles(props.data)" >{{ props.data.number }}</div>
@@ -37,7 +37,7 @@ const getNumberStyles = (data) => {
     opacity: data.opacity + "%",
     fontFamily: "var(--primary-font-family)",
     fontWeight:"bold",
-    fontSize:"20px",
+    fontSize:"18px",
     lineHeight:"24px"
 
   };

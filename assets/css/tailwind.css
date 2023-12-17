@@ -17,6 +17,7 @@ html {
   font-family: var(--primary-font-family);
   font-weight: medium !important;
   height: auto;
+  background-color: #F8F8F8;
 }
 
 * {
@@ -250,4 +251,25 @@ html {
   color: #ffffff;
   text-transform: uppercase;
   opacity: 1;
+}
+.apexcharts-yaxis {
+    display: none;
+  }
+  #SvgjsG1088 rect {
+    display: none !important;
+  }
+  .apexcharts-text tspan{
+      font-size: 10px;
+      font-family: var(--primary-font-family) !important;
+      font-weight: 600;
+      line-height: 24px;
+      color: #000000;
+  }
+.chart-title{
+    font-family: var(--primary-font-family);
+    opacity:1;
+    font-size:13px;
+    line-height: 16px;
+    color: #8F9BB3;
+    text-transform: uppercase;
 }

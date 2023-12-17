@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap w-full">
     <div
       v-for="(data, index) in dataCards"
       :key="index"
