@@ -16,8 +16,6 @@
 
                 <Button buttonText="SE CONNECTER"  buttonClasses="btn-login" />
 
-                <File label="MOT DE PASSE" placeholder="Mot De Passe" :input-classes="customInputClasses" 
-                />
 
         </div>
     </form>
@@ -31,8 +29,6 @@ definePageMeta({
 import MyInput from "@/components/input.vue";
 import PasswordInput from "@/components/passwordInput.vue";
 import Button from "@/components/button.vue";
-
-import File from "@/components/fileInput.vue";
 
 const username = ref('');
 const customInputClasses = 'normal-input';
