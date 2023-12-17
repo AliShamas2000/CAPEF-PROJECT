@@ -1,5 +1,5 @@
 <template>
-    <form class="form-group flex flex-col gap-1">
+    <div class="form-group flex flex-col gap-1">
         <label :for="inputId">{{ label }}</label>
         <div class="input-wrapper">
             <input :type="inputType" :id="inputId" :placeholder="placeholder" :class="inputClasses" v-model="inputValue" />
@@ -18,7 +18,7 @@
             </svg>
 
         </div>
-    </form>
+    </div>
 </template>
   
 <script>

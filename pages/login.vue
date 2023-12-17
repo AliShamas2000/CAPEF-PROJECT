@@ -1,5 +1,5 @@
 <template>
-    <div class="login_div flex flex-col gap-5   pt-5 pb-1 justify-start">
+    <form class="login_div flex flex-col gap-5   pt-5 pb-1 justify-start">
         <div class="login-container flex flex-col items-center">
             <div class="logo-login pb-5">
                 <img src="~assets/images/logo.png" alt="Logo" class="">
@@ -16,8 +16,9 @@
 
                 <Button buttonText="SE CONNECTER"  buttonClasses="btn-login" />
 
+
         </div>
-    </div>
+    </form>
 </template>
 
 <script setup>
