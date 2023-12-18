@@ -14,11 +14,29 @@ export function login(username, password) {
   // {headers}
   )
     .then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     })
     .catch((error) => {
-      console.error("Login failed:", error);
+      // console.error("Login failed:", error);
       throw error;
     });
 }
+
+// export async function login(username, password) {
+//   const data = {
+//     username: username,
+//     password: password
+//   };
+
+//   try {
+//     // Assuming the 'axios' module is available in the context (which it is in Nuxt)
+//     const response = await this.$axios.post('http://capefserver.myeasycards.com/Account/LoginUser', data);
+
+//     console.log(response.data);
+//     return response.data;
+//   } catch (error) {
+//     console.error("Login failed:", error);
+//     throw error;
+//   }
+// }

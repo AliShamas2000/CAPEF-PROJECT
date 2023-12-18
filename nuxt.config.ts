@@ -6,5 +6,4 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/vue-apexcharts.js',
   ],
-  
 })
