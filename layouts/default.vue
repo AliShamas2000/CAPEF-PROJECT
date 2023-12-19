@@ -1,14 +1,14 @@
 <template>
     <div class="flex">
 
-        <div class="side-nav w-20 flex flex-col gap-5  items-center pt-5 pb-1 justify-start">
+        <div class="side-nav w-1/5 flex flex-col gap-5  items-center pt-5 pb-1 justify-start">
 
             <div class="logo pt-5 pb-5">
                 <img src="~assets/images/logo.png" alt="Logo" class="">
             </div>
-        
+
             <div class="flex flex-col gap-5 pt-5">
-                <NuxtLink href="#" class="flex gap-5 mb-2">
+                <NuxtLink href="/" class="flex gap-5 mb-2">
                     <svg id="Group_248" data-name="Group 248" xmlns="http://www.w3.org/2000/svg" width="22.84"
                         height="21.571" viewBox="0 0 22.84 21.571">
                         <path id="Path_179" data-name="Path 179"
@@ -24,16 +24,15 @@
                             d="M323.172,128h-2.538a.635.635,0,0,0-.635.635v12.689a.635.635,0,0,0,.635.635h2.538a.635.635,0,0,0,.635-.635V128.635A.635.635,0,0,0,323.172,128Zm-.634,12.689h-1.269v-11.42h1.269Zm0,0"
                             transform="translate(-300.967 -120.387)" />
                         <path id="Path_183" data-name="Path 183"
-                            d="M19.936,3.515a1.884,1.884,0,0,0,1,.292,1.9,1.9,0,1,0-1.9-1.9,1.882,1.882,0,0,0,.109.608L15.966,4.4a1.887,1.887,0,0,0-3.038.407l-2.8-1.388a1.906,1.906,0,0,0,.025-.246A1.9,1.9,0,1,0,6.49,3.9L2.856,6.61A1.881,1.881,0,0,0,1.9,6.344,1.923,1.923,0,1,0,3.679,7.579L7.349,4.84a1.863,1.863,0,0,0,2.2-.289l3.186,1.578A1.9,1.9,0,0,0,16.5,5.71c0-.048-.011-.094-.014-.141Zm1-2.246A.635.635,0,1,1,20.3,1.9.635.635,0,0,1,20.937,1.269ZM1.9,8.882a.634.634,0,1,1,.635-.634A.634.634,0,0,1,1.9,8.882ZM8.248,3.807a.634.634,0,1,1,.634-.635A.635.635,0,0,1,8.248,3.807Zm6.344,2.538a.635.635,0,1,1,.635-.635A.634.634,0,0,1,14.592,6.344Zm0,0"
-                            />
+                            d="M19.936,3.515a1.884,1.884,0,0,0,1,.292,1.9,1.9,0,1,0-1.9-1.9,1.882,1.882,0,0,0,.109.608L15.966,4.4a1.887,1.887,0,0,0-3.038.407l-2.8-1.388a1.906,1.906,0,0,0,.025-.246A1.9,1.9,0,1,0,6.49,3.9L2.856,6.61A1.881,1.881,0,0,0,1.9,6.344,1.923,1.923,0,1,0,3.679,7.579L7.349,4.84a1.863,1.863,0,0,0,2.2-.289l3.186,1.578A1.9,1.9,0,0,0,16.5,5.71c0-.048-.011-.094-.014-.141Zm1-2.246A.635.635,0,1,1,20.3,1.9.635.635,0,0,1,20.937,1.269ZM1.9,8.882a.634.634,0,1,1,.635-.634A.634.634,0,0,1,1.9,8.882ZM8.248,3.807a.634.634,0,1,1,.634-.635A.635.635,0,0,1,8.248,3.807Zm6.344,2.538a.635.635,0,1,1,.635-.635A.634.634,0,0,1,14.592,6.344Zm0,0" />
                     </svg>
 
                     <div class="nav-text">Tableau De Bord</div>
 
                 </NuxtLink>
 
-                <NuxtLink href="/Ressortissants" class="flex gap-5 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23.139" height="19.387" viewBox="0 0 23.139 19.387">
+                <NuxtLink href="/members" class="flex gap-5 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23.139" height="19.387" viewBox="0 0 23.139 19.387" fill="none">
                         <g id="Icon_feather-users" data-name="Icon feather-users" transform="translate(-0.5 -3.408)">
                             <path id="Path_5" data-name="Path 5"
                                 d="M16.874,28.265V26.343A3.843,3.843,0,0,0,13.03,22.5H5.343A3.843,3.843,0,0,0,1.5,26.343v1.922"
@@ -57,7 +56,7 @@
 
                 </NuxtLink>
 
-                <NuxtLink href="/agents" class="flex gap-5 mb-2">
+                <NuxtLink href="/agents" class="flex gap-5 mb-2" :class="{ 'router-link-exact-active ': $route.path === '/agents/add-agent' }">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22.773" height="20.016" viewBox="0 0 22.773 20.016">
                         <path id="Path_184" data-name="Path 184"
                             d="M22.11,2.669H16.057V2a2,2,0,0,0-2-2H8.718a2,2,0,0,0-2,2v.667H.667A.669.669,0,0,0,0,3.336V18.014a2,2,0,0,0,2,2h18.77a2,2,0,0,0,2-2V3.347A.648.648,0,0,0,22.11,2.669ZM8.051,2a.668.668,0,0,1,.667-.667h5.338A.668.668,0,0,1,14.723,2v.667H8.051Zm13.13,2-2.072,6.216a.666.666,0,0,1-.633.456H14.723v-.667a.667.667,0,0,0-.667-.667H8.718a.667.667,0,0,0-.667.667v.667H4.3a.666.666,0,0,1-.633-.456L1.593,4Zm-7.792,6.672v1.334h-4V10.675Zm8.051,7.339a.668.668,0,0,1-.667.667H2a.668.668,0,0,1-.667-.667V7.447L2.4,10.641a2,2,0,0,0,1.9,1.369H8.051v.667a.667.667,0,0,0,.667.667h5.338a.667.667,0,0,0,.667-.667v-.667h3.753a2,2,0,0,0,1.9-1.369l1.065-3.193Zm0,0" />
@@ -67,7 +66,7 @@
 
                 </NuxtLink>
 
-                <NuxtLink href="/agents" class="flex gap-5 mb-2">
+                <NuxtLink href="/ss" class="flex gap-5 mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19.043" height="21.667" viewBox="0 0 19.043 21.667">
                         <g id="Group_264" data-name="Group 264" transform="translate(-31)">
                             <g id="Group_261" data-name="Group 261" transform="translate(31)">
@@ -92,7 +91,7 @@
                     <div class="nav-text">Régions</div>
 
                 </NuxtLink>
-                <NuxtLink href="/agents" class="flex gap-5 mb-2">
+                <NuxtLink href="/ss" class="flex gap-5 mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="23.295" height="23.295" viewBox="0 0 23.295 23.295">
                         <g id="Group_256" data-name="Group 256" transform="translate(0 0)">
                             <path id="Path_188" data-name="Path 188"
@@ -108,7 +107,7 @@
 
                 </NuxtLink>
 
-                <NuxtLink href="/agents" class="flex gap-5 mb-2">
+                <NuxtLink href="/ss" class="flex gap-5 mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18.882" height="24.034" viewBox="0 0 18.882 24.034">
                         <g id="Group_259" data-name="Group 259" transform="translate(-47.037 0)">
                             <g id="Group_258" data-name="Group 258" transform="translate(47.037 0)">
@@ -144,7 +143,7 @@
                     <div class="nav-text">Listes</div>
 
                 </NuxtLink>
-                <NuxtLink href="/agents" class="flex gap-5 mb-2">
+                <NuxtLink href="/sss" class="flex gap-5 mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22.223" height="22.223" viewBox="0 0 22.223 22.223">
                         <g id="Icon" transform="translate(-2.25 -2.25)">
                             <path id="Path_197" data-name="Path 197"
@@ -153,36 +152,33 @@
                             <path id="Path_198" data-name="Path 198"
                                 d="M15.1,3.959h2.279a3.7,3.7,0,0,1,3.7,3.7V9.942a.855.855,0,1,0,1.709,0V7.663A5.412,5.412,0,0,0,17.384,2.25H15.1a.855.855,0,0,0,0,1.709Z"
                                 transform="translate(1.675 0)" fill-rule="evenodd" />
-                        <path id="Path_199" data-name="Path 199"
-                            d="M2.25,15.1v2.279A5.412,5.412,0,0,0,7.663,22.8H9.942a.855.855,0,1,0,0-1.709H7.663a3.7,3.7,0,0,1-3.7-3.7V15.1a.855.855,0,0,0-1.709,0Z"
-                            transform="translate(0 1.675)" fill-rule="evenodd" />
-                        <path id="Path_200" data-name="Path 200"
-                            d="M15.1,22.8h2.279A5.412,5.412,0,0,0,22.8,17.384V15.1a.855.855,0,0,0-1.709,0v2.279a3.7,3.7,0,0,1-3.7,3.7H15.1a.855.855,0,0,0,0,1.709Z"
-                            transform="translate(1.675 1.675)" fill-rule="evenodd" />
-                        <path id="Path_201" data-name="Path 201"
-                            d="M11.283,26.169V24.946A2.446,2.446,0,0,0,8.837,22.5H3.946A2.446,2.446,0,0,0,1.5,24.946v1.223"
-                            transform="translate(7.014 -7.739)" fill="none" stroke="#000" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5" />
-                        <path id="Path_202" data-name="Path 202"
-                            d="M12.392,6.946A2.446,2.446,0,1,1,9.946,4.5a2.446,2.446,0,0,1,2.446,2.446Z"
-                            transform="translate(3.459 2.923)" fill="none" stroke="#000" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5" />
-                    </g>
-                </svg>
+                            <path id="Path_199" data-name="Path 199"
+                                d="M2.25,15.1v2.279A5.412,5.412,0,0,0,7.663,22.8H9.942a.855.855,0,1,0,0-1.709H7.663a3.7,3.7,0,0,1-3.7-3.7V15.1a.855.855,0,0,0-1.709,0Z"
+                                transform="translate(0 1.675)" fill-rule="evenodd" />
+                            <path id="Path_200" data-name="Path 200"
+                                d="M15.1,22.8h2.279A5.412,5.412,0,0,0,22.8,17.384V15.1a.855.855,0,0,0-1.709,0v2.279a3.7,3.7,0,0,1-3.7,3.7H15.1a.855.855,0,0,0,0,1.709Z"
+                                transform="translate(1.675 1.675)" fill-rule="evenodd" />
+                            <path id="Path_201" data-name="Path 201"
+                                d="M11.283,26.169V24.946A2.446,2.446,0,0,0,8.837,22.5H3.946A2.446,2.446,0,0,0,1.5,24.946v1.223"
+                                transform="translate(7.014 -7.739)" fill="none" stroke="#000" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5" />
+                            <path id="Path_202" data-name="Path 202"
+                                d="M12.392,6.946A2.446,2.446,0,1,1,9.946,4.5a2.446,2.446,0,0,1,2.446,2.446Z"
+                                transform="translate(3.459 2.923)" fill="none" stroke="#000" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5" />
+                        </g>
+                    </svg>
 
 
-                <div class="nav-text">Carets</div>
+                    <div class="nav-text">Carets</div>
 
-            </NuxtLink>
+                </NuxtLink>
+            </div>
         </div>
+
+        <div class="w-4/5 background-second pr-5">
+            <slot />
+        </div>
+
     </div>
-
-
-
-
-
-    <div class="p-4">
-        <slot />
-    </div>
-
-</div></template>
+</template>

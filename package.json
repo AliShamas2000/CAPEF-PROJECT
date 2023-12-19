@@ -24,6 +24,7 @@
     "tailwindcss": "^3.3.6",
     "vue-apexcharts": "^1.6.2",
     "vue-axios": "^3.5.2",
+    "vue-tel-input": "^8.3.1",
     "vue-toast-notification": "^3.1.2",
     "vue3-apexcharts": "^1.4.4",
     "vue3-datepicker": "^0.4.0"
