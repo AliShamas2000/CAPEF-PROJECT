@@ -1,4 +1,5 @@
 import axios from "axios";
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 export function login(username, password) {
   const data = {
@@ -6,37 +7,21 @@ export function login(username, password) {
     password: password
   };
   // const token = localStorage.getItem("token"); 
-  // const headers = {
-  //    Authorization: `Bearer ${token}`,
-  //   'Content-Type': 'application/json',
-  // };
-  return axios.post('http://capefserver.myeasycards.com/Account/LoginUser', data,
-  // {headers}
-  )
+  const headers = {
+    'Content-Type': 'application/json',
+    'lang':"en"
+  };
+  const config = {
+    headers,
+    withCredentials:true
+  };
+  return axios.post('http://capefserver.myeasycards.com/Account/LoginUser', data,)
     .then((response) => {
-      // console.log(response.data);
       return response.data;
     })
     .catch((error) => {
-      // console.error("Login failed:", error);
       throw error;
     });
 }
 
-// export async function login(username, password) {
-//   const data = {
-//     username: username,
-//     password: password
-//   };
 
-//   try {
-//     // Assuming the 'axios' module is available in the context (which it is in Nuxt)
-//     const response = await this.$axios.post('http://capefserver.myeasycards.com/Account/LoginUser', data);
-
-//     console.log(response.data);
-//     return response.data;
-//   } catch (error) {
-//     console.error("Login failed:", error);
-//     throw error;
-//   }
-// }

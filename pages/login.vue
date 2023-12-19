@@ -31,6 +31,8 @@ import MyInput from "@/components/input.vue";
 import PasswordInput from "@/components/passwordInput.vue";
 import Button from "@/components/button.vue";
 import {login} from "../server/LoginApi";
+import {refreshToken} from "../server/RefreshTokenApi"
+import {storeInCookie} from "../utils/storeInCookies"
 import {useToast} from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-bootstrap.css';
 import { useRouter } from 'vue-router';
@@ -41,12 +43,12 @@ const router = useRouter();
 const customInputClasses = 'normal-input';
 const submitLoginForm = (event) => {
   event.preventDefault();
-  login(username.value, password.value)
+  refreshToken()
     .then((response) => {
         if (response.status.isValid==false){
          $toast.error(response.status.message);
         }else{
-            setCookies(response.jwttoken, response.refreshtoken.token, response.refreshtoken.expires);
+            storeInCookie(response.jwttoken, response.refreshtoken.token, response.refreshtoken.expires);
            
             router.push('/dashboard');
         }
@@ -55,13 +57,6 @@ const submitLoginForm = (event) => {
     .catch((error) => {
       console.error("Login failed:", error);
     });
-};
-const setCookies = (jwtToken, refreshToken,refreshTokenExpire) => {
-  const options = { path: '/' };
-  const formattedExpireDate = new Date(refreshTokenExpire).toUTCString();
-
-  document.cookie = `jwtToken=${jwtToken};expires=Thu, 01 Jan 2030 00:00:00 UTC; path=${options.path}`;
-  document.cookie = `refreshToken=${refreshToken}; expires=${formattedExpireDate}; path=${options.path}`;
 };
 </script>
 

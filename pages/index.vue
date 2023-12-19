@@ -4,9 +4,11 @@
 </template>
 
 <script setup>
+
 definePageMeta({
   layout: "default",
 });
+
 
 // const { data: todos } = await useFetch(
 //   "https://jsonplaceholder.typicode.com/todos"
