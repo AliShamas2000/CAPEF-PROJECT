@@ -43,7 +43,7 @@ const router = useRouter();
 const customInputClasses = 'normal-input';
 const submitLoginForm = (event) => {
   event.preventDefault();
-  refreshToken()
+  login(username.value, password.value)
     .then((response) => {
         if (response.status.isValid==false){
          $toast.error(response.status.message);

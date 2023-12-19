@@ -56,12 +56,29 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr class="bg-row">
-                    <td class="pt-5 pb-5 pl-5"> Statut</td>
-                    <td class="pt-5 pb-5 pl-5"> Statut</td>
-                    <td class="pt-5 pb-5 pl-5"> Statut</td>
-                </tr> -->
+                <tr v-for="member in members" :key="member.id" class="bg-row">
+                    <td class="pt-5 pb-5 pl-5">{{ member.id }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.membertype }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.categories }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.name }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.region }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.district }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.area }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.village }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.byagentname }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.subscriptiontrxid }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.seasonpaymentpaid }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.subscriptionpaymentpaid }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.seasonpayment }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.subscriptionpayment }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.status }}</td>
+                    <td class="pt-5 pb-5 pl-5">{{ member.action }}</td>
+                  </tr>
             </tbody>
         </table>
     </div>
 </template>
+<script setup>
+import { defineProps} from "vue";
+const props = defineProps(["members"]);
+</script>

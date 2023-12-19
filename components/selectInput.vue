@@ -2,10 +2,10 @@
   <div class="form-group flex flex-col gap-1">
     <label :for="inputId">{{ label }}</label>
     <div class="input-wrapper">
-      <select :id="inputId" :class="inputClasses" v-model="inputValue" style="background-color: #F8F8F8;">
+      <select :id="inputId" :class="inputClasses" v-model="inputValue" @input="emitInput" style="background-color: #F8F8F8;">
         <option :value="null" disabled selected>{{ placeholder }}</option>
-        <option v-for="(option, index) in options" :key="index" :value="option.value">
-          {{ option.label }}
+        <option v-for="(option, index) in options" :key="index" :value="option.id">
+          {{ option.name }}
         </option>
       </select>
       <svg
@@ -56,6 +56,11 @@ export default {
     return {
       inputValue: this.value,
     };
+  },
+  methods: {
+    emitInput() {
+      this.$emit('update:modelValue', this.inputValue);
+    },
   },
 };
 </script>

@@ -46,39 +46,39 @@
         <div class="pt-5">
             <div class="flex gap-4">
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;Type" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
+                    <TypeInput label="&nbsp;Type" inputId="" :input-classes="customInputClasses" :value="membertypeid" :options="filtersData?.membertypes"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;CATÉGORIE" inputId="" :input-classes="customInputClasses" :value="a"
-                        :options="a" placeholder="&nbsp;&nbsp;— Choisir —" />
+                    <TypeInput label="&nbsp;CATÉGORIE" inputId="" :input-classes="customInputClasses" :value="catid"
+                        :options="filtersData?.categories" placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;RÉGION" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
+                    <TypeInput label="&nbsp;RÉGION" inputId="" :input-classes="customInputClasses" :value="regionid" :options="filtersData?.regions"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;DÉPARTEMENT" inputId="" :input-classes="customInputClasses" :value="a"
-                        :options="a" placeholder="&nbsp;&nbsp;— Choisir —" />
+                    <TypeInput3 label="&nbsp;DÉPARTEMENT" inputId="" :input-classes="customInputClasses" :value="districtid"
+                        :options="filtersData?.districts" placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;ARRONDISSEMENT" inputId="" :input-classes="customInputClasses" :value="a"
-                        :options="a" placeholder="&nbsp;&nbsp;— Choisir —" />
+                    <TypeInput2 label="&nbsp;ARRONDISSEMENT" inputId="" :input-classes="customInputClasses" :value="areaid"
+                        :options="filtersData?.areas" placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
             </div>
             <br>
 
             <div class="flex gap-4 pb-5">
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;VILLAGE" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
+                    <TypeInput label="&nbsp;VILLAGE" inputId="" :input-classes="customInputClasses" :value="villageid" :options="filtersData?.villages"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;AGENT" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
+                    <TypeInput label="&nbsp;AGENT" inputId="" :input-classes="customInputClasses" :value="agentid" :options="filtersData?.agents"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;STATUT" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
+                    <TypeInput label="&nbsp;STATUT" inputId="" :input-classes="customInputClasses" :value="statusid" :options="filtersData?.memberstatus"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
@@ -101,7 +101,7 @@
             </div>
         </div>
         <div class="pt-5">
-            <Table />
+            <Table :members="members"/>
         </div>
     </div>
 </template>
@@ -109,6 +109,8 @@
 <script setup>
 
 import TypeInput from "@/components/selectInput.vue";
+import TypeInput2 from "@/components/selectInput2.vue";
+import TypeInput3 from "@/components/selectInput3.vue";
 import Button from "@/components/button.vue";
 import SearchInput from "@/components/search.vue";
 
@@ -117,5 +119,36 @@ definePageMeta({
 });
 const customInputClasses = 'normal-input';
 import Table from '~/components/table.vue';
+import { filterMembers } from "~/server/filterMembers";
+import { getFilterMembers } from "~/server/getFilterMembers";
+import { ref, onMounted } from 'vue';
+const members=ref(null)
+const filtersData=ref(null)
+const membertypeid=ref(null)
+const catid=ref(null)
+const regionid=ref(null)
+const districtid=ref(null)
+const areaid=ref(null)
+const villageid=ref(null)
+const agentid=ref(null)
+const statusid=ref(null)
+onMounted(()=>{
+    filterMembers(membertypeid.value, catid.value,regionid.value,districtid.value,areaid.value,villageid.value,agentid.value,statusid.value)
+    .then((response) => {
+         members.value=response.members
+         
+    })
+    .catch((error) => {
+      console.error("fetch failed:", error);
+    });
 
+    getFilterMembers()
+    .then((response) => {
+        filtersData.value=response
+        console.log(response)
+    })
+    .catch((error) => {
+      console.error("fetch failed:", error);
+    });
+})
 </script>
