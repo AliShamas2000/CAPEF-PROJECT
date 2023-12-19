@@ -49,7 +49,7 @@
 
             <div class="flex-1">
                 <NameInput label="&nbsp;TÉLÉPHONE" placeholder="Numéro Cni" :input-classes="customInputClasses"
-               v-model="aa" />
+                    v-model="aa" />
             </div>
             <div class="flex-1">
                 <NameInput label="&nbsp;NUMÉRO CNI" placeholder="Numéro Cni" :input-classes="customInputClasses"
@@ -59,6 +59,16 @@
             <div class="flex-1">
             </div>
         </div>
+        <div class="flex gap-4 pl-5 pt-5" style="width: 67%;">
+
+            <div class="flex-1">
+                <FileInput label="&nbsp;TÉLÉPHONE" placeholder="Numéro Cni" :input-classes="customInputClasses"
+                    v-model="aa" />
+            </div>
+
+
+          
+        </div>
     </form>
 </template>
 
@@ -67,6 +77,7 @@
 
 import NameInput from "@/components/input.vue";
 import TypeInput from "@/components/selectInput.vue";
+import FileInput from "@/components/fileInput.vue";
 import Date from "@/components/datepicker.vue";
 import Button from "@/components/button.vue";
 import SearchInput from "@/components/search.vue";
