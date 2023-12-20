@@ -72,7 +72,7 @@
                     <td class="pt-5 pb-5 pl-5">{{ member.seasonpayment }}</td>
                     <td class="pt-5 pb-5 pl-5">{{ member.subscriptionpayment }}</td>
                     <td class="pt-5 pb-5 pl-5">{{ member.status }}</td>
-                    <td class="pt-5 pb-5 pl-5">{{ member.action }}</td>
+                    <td class="pt-5 pb-5 pl-5"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="6" viewBox="0 0 192 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"/></svg></td>
                   </tr>
             </tbody>
         </table>

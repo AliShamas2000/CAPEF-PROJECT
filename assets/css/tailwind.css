@@ -175,7 +175,7 @@ input{
   padding-right: 20px;
 }
 .logo {
-  width: 70px;
+  width: 80px;
 }
 
 .router-link-exact-active {
@@ -495,6 +495,7 @@ text-transform: capitalize;
   border-bottom: 2px solid #00000012;
   display: flex;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .border-tabs div{
@@ -546,4 +547,17 @@ text-transform: capitalize;
   text-transform: uppercase;
   color: var(--primary-color);
 
+}
+
+.pl-30{
+  padding-left: 30px;
+}
+
+.active-color{
+  background: #3399661A 0% 0% no-repeat padding-box;
+  border: 1px solid #00000012;
+  border-radius: 15px;
+ padding: 10px;
+ text-align: center;
+  color: var(--primary-color);
 }
