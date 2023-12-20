@@ -34,7 +34,7 @@
         </thead>
         <tbody>
           <tr v-for="(agent, index) in agents" :key="index" class="bg-row">
-            <td class="pt-5 pb-5 pl-5">{{ index + 1 }}</td>
+            <td class="pt-5 pb-5 pl-5">{{ agent.id}}</td>
             <td class="pt-5 pb-5 pl-5">{{ agent.firstname }} {{ agent.lastname }}</td>
             <td class="pt-5 pb-5 pl-5">{{ agent.regions }}</td>
             <td class="pt-5 pb-5 pl-5">{{ agent.districts }}</td>
