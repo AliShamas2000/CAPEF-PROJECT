@@ -46,15 +46,15 @@
         <div class="pt-5">
             <div class="flex gap-4">
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;Type" inputId="" :input-classes="customInputClasses" :value="membertypeid" :options="filtersData?.membertypes"
+                    <TypeInput label="&nbsp;Type" inputId="" :input-classes="customInputClasses" :modelValue="membertypeid" :options="filtersData?.membertypes"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;CATÉGORIE" inputId="" :input-classes="customInputClasses" :value="catid"
+                    <TypeInput label="&nbsp;CATÉGORIE" inputId="" :input-classes="customInputClasses" :modelValue="catid"
                         :options="filtersData?.categories" placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;RÉGION" inputId="" :input-classes="customInputClasses" :value="regionid" :options="filtersData?.regions"
+                    <TypeInput label="&nbsp;RÉGION" inputId="" :input-classes="customInputClasses" :modelValue="regionid" :options="filtersData?.regions"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
@@ -70,15 +70,15 @@
 
             <div class="flex gap-4 pb-5">
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;VILLAGE" inputId="" :input-classes="customInputClasses" :value="villageid" :options="filtersData?.villages"
+                    <TypeInput label="&nbsp;VILLAGE" inputId="" :input-classes="customInputClasses" :modelValue="villageid" :options="filtersData?.villages"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;AGENT" inputId="" :input-classes="customInputClasses" :value="agentid" :options="filtersData?.agents"
+                    <TypeInput label="&nbsp;AGENT" inputId="" :input-classes="customInputClasses" :modelValue="agentid" :options="filtersData?.agents"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;STATUT" inputId="" :input-classes="customInputClasses" :value="statusid" :options="filtersData?.memberstatus"
+                    <TypeInput label="&nbsp;STATUT" inputId="" :input-classes="customInputClasses" :modelValue="statusid" :options="filtersData?.memberstatus"
                         placeholder="&nbsp;&nbsp;— Choisir —" />
                 </div>
                 <div class="flex-1">

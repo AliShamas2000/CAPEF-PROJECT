@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref, onMounted } from "vue";
+import { defineProps, ref, onMounted  } from "vue";
 const props = defineProps(["data", "title", "showNumbers"]);
 const ApexCharts = ref(null);
 
@@ -24,13 +24,13 @@ onMounted(async () => {
     const module = await import("vue3-apexcharts");
     ApexCharts.value = module.default;
   }
+ 
 });
 
-// Convert string numbers to integers
 const processedData = props.data.map(item => ({
-  name: item.name,
-  number: parseInt(item.number.replace(/,/g, ""), 10),
-}));
+  name: item?.name,
+  number: parseInt(item.qty?.replace(/,/g, ""), 10),
+})) 
 
 const options = {
   chart: {
@@ -55,10 +55,10 @@ const options = {
     show: false,
   },
   xaxis: {
-    categories: processedData.map(value => value.name),
+    categories: processedData?.map(value => value?.name),
   },
   yaxis: {
-    max: Math.max(...processedData.map(item => item.number)) + 1000,
+    max: Math.max(...processedData?.map(item => item?.qty)) + 1000,
   },
   grid: {
     show: false,
@@ -67,12 +67,12 @@ const options = {
     points: props.showNumbers
       ? processedData.map(value => ({
           x: value.name,
-          y: value.number,
+          y: value.qty,
           marker: {
             size: 0,
           },
           label: {
-            text: value.number.toString(),
+            text: value.qty.toString(),
             position: "center",
             offsetY: -10,
             style: {
@@ -90,7 +90,7 @@ const options = {
 const series = ref([
   {
     name:"quantity",
-    data: processedData.map(item => item.number),
+    data: processedData.map(item => item.qty),
   },
 ]);
 </script>

@@ -50,7 +50,7 @@ const submitLoginForm = (event) => {
         }else{
             storeInCookie(response.jwttoken, response.refreshtoken.token, response.refreshtoken.expires);
            
-            router.push('/dashboard');
+            router.push('/');
         }
 
     })
