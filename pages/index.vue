@@ -7,15 +7,15 @@
 
     <div class="flex gap-4 pb-5">
       <div class="flex-1">
-        <Date label="&nbsp;PRÉNOM" placeholder="DATE DE NAISSANCE" :input-classes="customInputClasses" v-model="aa"
+        <Date label="&nbsp;DATE “DU”" placeholder="DATE DE NAISSANCE" :input-classes="customInputClasses" v-model="aa"
           :modelValue="aa" />
       </div>
       <div class="flex-1">
-        <Date label="&nbsp;PRÉNOM" placeholder="DATE DE NAISSANCE" :input-classes="customInputClasses" v-model="aa"
+        <Date label="&nbsp;DATE “AU”" placeholder="DATE DE NAISSANCE" :input-classes="customInputClasses" v-model="aa"
           :modelValue="aa" />
       </div>
       <div class="flex-1">
-        <TypeInput label="&nbsp;STATUT" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
+        <TypeInput label="&nbsp;FILTRER PAR STATUT" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
           placeholder="&nbsp;&nbsp;— Choisir —" />
       </div>
       <div class="flex-1">
