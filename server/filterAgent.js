@@ -1,15 +1,12 @@
 import axios from "axios";
 
 
-export function filterMembers(membertypeid, catid, regionid, districtid, areaid, villageid, agentid, statusid) {
+export function filterAgents(regionid, districtid, areaid, villageid, statusid) {
   const data = {
-    membertypeid: membertypeid,
-    catid: catid,
     regionid: regionid,
     districtid: districtid,
     areaid: areaid,
     villageid: villageid,
-    agentid: agentid,
     statusid: statusid
   };
   const token = getCookie("jwt")
@@ -22,7 +19,7 @@ export function filterMembers(membertypeid, catid, regionid, districtid, areaid,
     headers: headers,
   };
 
-  return axios.post('http://capefserver.myeasycards.com/Members/FilterMembers', data, config)
+  return axios.post('http://capefserver.myeasycards.com/Agents/FilterAgents', data, config)
     .then((response) => {
       return response.data;
     })

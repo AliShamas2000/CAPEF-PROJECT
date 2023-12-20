@@ -49,32 +49,33 @@
         <div class="pt-5">
             <div class="flex gap-4">
                 <div class="flex-1">
-                    <TypeInput label="&nbsp;RÉGION" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
-                        placeholder="&nbsp;&nbsp;— Choisir —" />
-                </div>
-                <div class="flex-1">
-                    <TypeInput label="&nbsp;DÉPARTEMENT" inputId="" :input-classes="customInputClasses" :value="a"
-                        :options="a" placeholder="&nbsp;&nbsp;— Choisir —" />
-                </div>
-                <div class="flex-1">
-                    <TypeInput label="&nbsp;ARRONDISSEMENT" inputId="" :input-classes="customInputClasses" :value="a" :options="a"
-                        placeholder="&nbsp;&nbsp;— Choisir —" />
-                </div>
-                <div class="flex-1">
-                    <TypeInput label="&nbsp;VILLAGE" inputId="" :input-classes="customInputClasses" :value="a"
-                        :options="a" placeholder="&nbsp;&nbsp;— Choisir —" />
-                </div>
-                <div class="flex-1">
-                    <TypeInput label="&nbsp;STATUT" inputId="" :input-classes="customInputClasses" :value="a"
-                        :options="a" placeholder="&nbsp;&nbsp;— Choisir —" />
-                </div>
+                    
+                        <TypeInput label="&nbsp;RÉGION" inputId="" :input-classes="customInputClasses" :modelValue="regionid" :options="filtersData?.regions"
+                            placeholder="&nbsp;&nbsp;— Choisir —" />
+                    </div>
+                    <div class="flex-1">
+                        <TypeInput label="&nbsp;DÉPARTEMENT" inputId="" :input-classes="customInputClasses" :modelValue="districtid"
+                            :options="filtersData?.districts" placeholder="&nbsp;&nbsp;— Choisir —" />
+                    </div>
+                    <div class="flex-1">
+                        <TypeInput label="&nbsp;ARRONDISSEMENT" inputId="" :input-classes="customInputClasses" :modelValue="areaid" :options="filtersData?.areas"
+                            placeholder="&nbsp;&nbsp;— Choisir —" />
+                    </div>
+                    <div class="flex-1">
+                        <TypeInput label="&nbsp;VILLAGE" inputId="" :input-classes="customInputClasses" :modelValue="villageid"
+                            :options="filtersData?.villages" placeholder="&nbsp;&nbsp;— Choisir —" />
+                    </div>
+                    <div class="flex-1">
+                        <TypeInput label="&nbsp;STATUT" inputId="" :input-classes="customInputClasses" :modelValue="statusid"
+                            :options="filtersData?.status" placeholder="&nbsp;&nbsp;— Choisir —" />
+                    </div>
             </div>
         
             <br>
             
         </div>
 
-        <Button buttonText="&nbsp;FILTRER" buttonClasses="width-btn-10 btn-add pt-3 pb-3 mt-5 mb-5 " />
+        <Button buttonText="&nbsp;FILTRER" buttonClasses="width-btn-10 btn-add pt-3 pb-3 mt-5 mb-5 " @click="filterAgent"/>
         <br>
         <br>
              <div class="flex pt-2">
@@ -86,7 +87,7 @@
                 </div>
             </div>
         <div class="pt-5">
-            <Table />
+            <Table :agents="agents"/>
         </div>
     </div>
 </template>
@@ -101,6 +102,35 @@ definePageMeta({
     layout: "default",
 });
 const customInputClasses = 'normal-input';
-import Table from '~/components/table.vue';
-
+import Table from '~/components/agentTable.vue';
+import { filterAgents } from "~/server/filterAgent";
+import { getFilterAgents } from "~/server/getFilterAgents";
+import { ref, onMounted } from 'vue';
+const agents=ref(null)
+const filtersData=ref(null)
+const regionid=ref(null)
+const districtid=ref(null)
+const areaid=ref(null)
+const villageid=ref(null)
+const statusid=ref(null)
+function filterAgent(){
+    filterAgents(regionid.value,districtid.value,areaid.value,villageid.value,statusid.value)
+    .then((response) => {
+         agents.value=response.agents
+    })
+    .catch((error) => {
+      console.error("fetch failed:", error);
+    });
+}
+onMounted(()=>{
+   
+    filterAgent()
+    getFilterAgents()
+    .then((response) => {
+        filtersData.value=response
+    })
+    .catch((error) => {
+      console.error("fetch failed:", error);
+    });
+})
 </script>

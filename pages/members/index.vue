@@ -83,7 +83,7 @@
                 </div>
                 <div class="flex-1">
                     <br>
-                    <Button buttonText="&nbsp;FILTRER" buttonClasses="btn-filter" />
+                    <Button buttonText="&nbsp;FILTRER" buttonClasses="btn-filter" @click="filterMember()"/>
 
                 </div>
                 <div class="flex-1">
@@ -132,20 +132,21 @@ const areaid=ref(null)
 const villageid=ref(null)
 const agentid=ref(null)
 const statusid=ref(null)
-onMounted(()=>{
+function filterMember(){
     filterMembers(membertypeid.value, catid.value,regionid.value,districtid.value,areaid.value,villageid.value,agentid.value,statusid.value)
     .then((response) => {
          members.value=response.members
-         
     })
     .catch((error) => {
       console.error("fetch failed:", error);
     });
-
+}
+onMounted(()=>{
+   
+   filterMember()
     getFilterMembers()
     .then((response) => {
         filtersData.value=response
-        console.log(response)
     })
     .catch((error) => {
       console.error("fetch failed:", error);
