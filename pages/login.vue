@@ -15,6 +15,7 @@
                 v-model="password" type="password" :modelValue="password"/>
 
                 <Button buttonText="SE CONNECTER"  buttonClasses="btn-login"/>
+                <div class="pt-5 forget-pass">j'ai oublié mon mot de passe</div>
 
 
         </div>

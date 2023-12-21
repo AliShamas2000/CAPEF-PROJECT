@@ -32,7 +32,8 @@
                 </NuxtLink>
 
                 <NuxtLink href="/members" class="flex gap-5 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23.139" height="19.387" viewBox="0 0 23.139 19.387" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23.139" height="19.387" viewBox="0 0 23.139 19.387"
+                        fill="none">
                         <g id="Icon_feather-users" data-name="Icon feather-users" transform="translate(-0.5 -3.408)">
                             <path id="Path_5" data-name="Path 5"
                                 d="M16.874,28.265V26.343A3.843,3.843,0,0,0,13.03,22.5H5.343A3.843,3.843,0,0,0,1.5,26.343v1.922"
@@ -56,7 +57,8 @@
 
                 </NuxtLink>
 
-                <NuxtLink href="/agents" class="flex gap-5 mb-2" :class="{ 'router-link-exact-active ': $route.path === '/agents/add-agent' }">
+                <NuxtLink href="/agents" class="flex gap-5 mb-2"
+                    :class="{ 'router-link-exact-active ': $route.path === '/agents/add-agent' }">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22.773" height="20.016" viewBox="0 0 22.773 20.016">
                         <path id="Path_184" data-name="Path 184"
                             d="M22.11,2.669H16.057V2a2,2,0,0,0-2-2H8.718a2,2,0,0,0-2,2v.667H.667A.669.669,0,0,0,0,3.336V18.014a2,2,0,0,0,2,2h18.77a2,2,0,0,0,2-2V3.347A.648.648,0,0,0,22.11,2.669ZM8.051,2a.668.668,0,0,1,.667-.667h5.338A.668.668,0,0,1,14.723,2v.667H8.051Zm13.13,2-2.072,6.216a.666.666,0,0,1-.633.456H14.723v-.667a.667.667,0,0,0-.667-.667H8.718a.667.667,0,0,0-.667.667v.667H4.3a.666.666,0,0,1-.633-.456L1.593,4Zm-7.792,6.672v1.334h-4V10.675Zm8.051,7.339a.668.668,0,0,1-.667.667H2a.668.668,0,0,1-.667-.667V7.447L2.4,10.641a2,2,0,0,0,1.9,1.369H8.051v.667a.667.667,0,0,0,.667.667h5.338a.667.667,0,0,0,.667-.667v-.667h3.753a2,2,0,0,0,1.9-1.369l1.065-3.193Zm0,0" />
@@ -66,7 +68,7 @@
 
                 </NuxtLink>
 
-                <NuxtLink href="/ss" class="flex gap-5 mb-2">
+                <NuxtLink href="/ss" class="flex gap-5 mb-2 disabled-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19.043" height="21.667" viewBox="0 0 19.043 21.667">
                         <g id="Group_264" data-name="Group 264" transform="translate(-31)">
                             <g id="Group_261" data-name="Group 261" transform="translate(31)">
@@ -91,7 +93,7 @@
                     <div class="nav-text">Régions</div>
 
                 </NuxtLink>
-                <NuxtLink href="/ss" class="flex gap-5 mb-2">
+                <NuxtLink href="/ss" class="flex gap-5 mb-2 disabled-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="23.295" height="23.295" viewBox="0 0 23.295 23.295">
                         <g id="Group_256" data-name="Group 256" transform="translate(0 0)">
                             <path id="Path_188" data-name="Path 188"
@@ -107,7 +109,7 @@
 
                 </NuxtLink>
 
-                <NuxtLink href="/ss" class="flex gap-5 mb-2">
+                <NuxtLink href="/ss" class="flex gap-5 mb-2 disabled-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18.882" height="24.034" viewBox="0 0 18.882 24.034">
                         <g id="Group_259" data-name="Group 259" transform="translate(-47.037 0)">
                             <g id="Group_258" data-name="Group 258" transform="translate(47.037 0)">
@@ -143,7 +145,7 @@
                     <div class="nav-text">Listes</div>
 
                 </NuxtLink>
-                <NuxtLink href="/sss" class="flex gap-5 mb-2">
+                <NuxtLink href="/sss" class="flex gap-5 mb-2 disabled-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22.223" height="22.223" viewBox="0 0 22.223 22.223">
                         <g id="Icon" transform="translate(-2.25 -2.25)">
                             <path id="Path_197" data-name="Path 197"

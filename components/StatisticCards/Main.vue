@@ -1,15 +1,13 @@
 <template>
-  <div class="flex flex-wrap w-full">
-    <div
-      v-for="(data, index) in dataCards"
-      :key="index"
-    >
+  <div class=" pt-5" style="width:100%; gap:2%; display:flex;
+  flex-direction: row; justify-content: space-between; flex-wrap: wrap;">
+    <div v-for="(data, index) in dataCards" :key="index">
       <Card :data="data" />
     </div>
   </div>
 </template>
   
-  <script setup>
+<script setup>
 import Card from "./Card.vue";
 
 const dataCards = [
@@ -52,6 +50,5 @@ const dataCards = [
 ];
 </script>
   
-  <style>
-</style>
+<style></style>
   

@@ -25,12 +25,25 @@ input{
  
 }
 
+
+
+.content {
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+}
+
+
 * {
   color: inherit;
   font-size: inherit;
   box-sizing: border-box;
   font-family: inherit;
 }
+
+/* #__nuxt{
+  background: #ffffff 0% 0% no-repeat padding-box;
+} */
 
 .asp {
   position: relative;
@@ -162,7 +175,7 @@ input{
   padding-right: 20px;
 }
 .logo {
-  width: 70px;
+  width: 80px;
 }
 
 .router-link-exact-active {
@@ -357,7 +370,7 @@ input[type="file"]::-webkit-file-upload-button {
 .members-title {
   margin-top: 20px;
   font-family: var(--primary-font-family);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 24px;
   color: var(--primary-color);
   text-transform: capitalize;
@@ -476,4 +489,75 @@ text-transform: uppercase;
 letter-spacing: 0px;
 color: #339966;
 text-transform: capitalize;
+}
+
+.border-tabs{
+  border-bottom: 2px solid #00000012;
+  display: flex;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.border-tabs div{
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  text-transform: capitalize;
+  opacity: 0.3;
+  
+
+}
+
+.class-cards{
+  margin-bottom: 20px;
+  /* flex: 1; */
+  padding: 10px;
+  
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #00000012;
+  border-radius: 8px;
+  width:180px;
+  height: 90px;
+
+}
+
+
+.card-title{
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0px;
+  color: #8F9BB3;
+  text-transform: uppercase;
+  opacity: 1;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+
+.disabled-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.forget-pass{
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+
+}
+
+.pl-30{
+  padding-left: 30px;
+}
+
+.active-color{
+  background: #3399661A 0% 0% no-repeat padding-box;
+  border: 1px solid #00000012;
+  border-radius: 15px;
+ padding: 10px;
+ text-align: center;
+  color: var(--primary-color);
 }
